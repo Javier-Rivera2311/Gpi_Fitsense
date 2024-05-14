@@ -26,6 +26,21 @@ const Login = Loadable(lazy(() => import("../pages/Log/Login")));
 const Register = Loadable(lazy(() => import("../pages/Log/Register")));
 <Register path="/Register" component={Register} />
 
+const Profile = Loadable(lazy(() => import("../pages/Profile/Profile")));
+<Profile path="/Profile" component={Profile} />
+
+const Prices = Loadable(lazy(() => import("../pages/Prices/Prices")));
+<Prices path="/Prices" component={Prices} />
+
+const Contact = Loadable(lazy(() => import("../pages/Contact/Contact")));
+<Contact path="/Contact" component={Contact} />
+
+const Blog = Loadable(lazy(() => import("../pages/Blog/Blog")));
+<Blog path="/Blog" component={Blog} />
+
+const Workout = Loadable(lazy(() => import("../pages/Workout/Workout")));
+<Workout path="/Workout" component={Workout} />
+
 /* ****Routes***** */
 
 const Router = [
@@ -36,6 +51,11 @@ const Router = [
       { path: "", exact: true, element: <HomePage /> },
       { path: "*", element: <Navigate to="/404" /> },
       { path: "404", element: <Error /> },
+      {path: "Profile",exact: true, element: <Profile/>},
+      {path: "Prices",exact: true, element: <Prices/>},
+      {path: "Contact",exact: true, element: <Contact/>},
+      {path: "Blog",exact: true, element: <Blog/>},
+      {path: "Workout",exact: true, element: <Workout/>},
 
     ],
   },

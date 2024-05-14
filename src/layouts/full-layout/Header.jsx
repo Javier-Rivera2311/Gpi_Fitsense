@@ -2,6 +2,9 @@ import { AppBar, Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Too
 import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import AdbIcon from "@mui/icons-material/Adb";
+import Logo from "../../assets/mancuerna.png";
+import Bar from "../../assets/bar.png";
+
 
 function Header() {
   const pages = ["Products", "Pricing", "Blog"];
@@ -28,7 +31,7 @@ function Header() {
     <AppBar position="static" sx={{ backgroundColor: "black" }}>
       <Container maxWidth="xl" sx={{ backgroundColor: "black" }}>
         <Toolbar disableGutters sx={{ backgroundColor: "black" }}>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <img src={Logo} alt="Mancuerna" style={{ width: '24px', height: '24px', display: { xs: "none", md: "flex" }, marginRight: '8px' }} />
           <Typography
             variant="h6"
             noWrap
@@ -40,11 +43,11 @@ function Header() {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: "#AB8F16",
               textDecoration: "none",
             }}
           >
-            LOGO
+            FITSENSE
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -100,14 +103,14 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            Fitsense
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, color: "#AB8F16", display: "block" }}
               >
                 {page}
               </Button>
@@ -119,7 +122,7 @@ function Header() {
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
                 <Avatar
                   alt="Remy Sharp"
-                  src="https://www.universidadesonline.cl/logos/original/logo-universidad-de-valparaiso.png"
+                  src={Bar}
                 />
               </IconButton>
             </Tooltip>
