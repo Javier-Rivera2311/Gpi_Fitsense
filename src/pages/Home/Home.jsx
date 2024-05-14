@@ -1,7 +1,7 @@
 import React from "react";
 import PageContainer from "../../components/container/PageContainer";
 import { Box, Typography } from "@mui/material";
-
+import img from "../../assets/fitness-1882721_1280.jpg";
 function Home() {
   return (
     <PageContainer title="Pagina inicio" description="colocar algo">
@@ -12,12 +12,11 @@ function Home() {
           alignItems: "center",
           width: "100%",
           flexDirection: "column",
-          backgroundImage:
-            "url(https://equipoparagimnasioferbel.com/wp-content/uploads/2018/08/equipo-para-gimnasio2.jpg)",
-          backgroundSize: "cover",
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${img})`,
+          backgroundSize: "100% 90%",
           backgroundRepeat: "no-repeat",
           backgroundPositionY: "18%",
-          backgroundAttachment: "fixed",
+          backgroundPosition: "top",
         }}
         minHeight={600}
       >
