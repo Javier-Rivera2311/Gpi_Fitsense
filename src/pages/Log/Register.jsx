@@ -12,6 +12,7 @@ function RegisterForm() {
   const navigate =useNavigate();
   const [Values, setValues] = useState({
     name: '',
+    lastname: '',
     email: '',
     password: '',
     confirmPassword: ''
@@ -81,7 +82,12 @@ const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=\[\]{
         <div className="field">
           <input autoComplete="off" placeholder="Enter Name" name='name'
           onChange={e => setValues({...Values, name: e.target.value})} className="input-field" type="text" />
-          </div>
+        </div>
+
+          <div className="field">
+          <input autoComplete="off" placeholder="Enter Last Name" name='lastname'
+          onChange={e => setValues({...Values, lastname: e.target.value})} className="input-field" type="text" />
+          </div>        
 
           <div className="field">
           <input autoComplete="off" placeholder="Enter Email" name='email'
