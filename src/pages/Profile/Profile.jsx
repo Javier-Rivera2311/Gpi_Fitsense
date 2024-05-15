@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Box, Typography, Paper, Avatar, Button } from "@mui/material";
 import { Link } from 'react-router-dom';
 import fondo1 from "../../assets/fitness-1882721_1280.jpg";
+import UpdateUserForm from './UpdateUserForm';
 
 const Profile = () => {
   const [name, setName] = useState("");
@@ -51,6 +52,9 @@ const Profile = () => {
           Cambiar contraseña
         </Button>
       </Paper>
+      <box style={{ marginTop: '20px' }}>
+      <UpdateUserForm />
+      </box>
     </Box>
   );
 };
