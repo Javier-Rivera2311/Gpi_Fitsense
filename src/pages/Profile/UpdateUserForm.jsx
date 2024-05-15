@@ -53,7 +53,7 @@ const UpdateUserForm = () => {
         <Select value={exercise_level} onChange={(e) => setExerciseLevel(e.target.value)}>
             <MenuItem value={'Poco o ningún ejercicio'}>Poco o ningún ejercicio</MenuItem>
             <MenuItem value={'Ejercicio ligero (1 - 3 días por semana)'}>Ejercicio ligero (1 - 3 días por semana)</MenuItem>
-            <MenuItem value={'Ejercicio moderado'}>Ejercicio moderado (3 - 5 días por semana)</MenuItem>
+            <MenuItem value={'Ejercicio moderado (3 - 5 días por semana)'}>Ejercicio moderado (3 - 5 días por semana)</MenuItem>
             <MenuItem value={'Ejercicio fuerte (6 - 7 días por semana)'}>Ejercicio fuerte (6 - 7 días por semana)</MenuItem>
         </Select>
         </FormControl>
