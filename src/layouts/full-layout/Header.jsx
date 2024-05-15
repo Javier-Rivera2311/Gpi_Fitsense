@@ -1,13 +1,12 @@
 import { AppBar, Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography } from "@mui/material";
 import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import AdbIcon from "@mui/icons-material/Adb";
 import Logo from "../../assets/mancuerna.png";
 import Bar from "../../assets/bar.png";
 
 
 function Header() {
-  const pages = ["Products", "Pricing", "Blog"];
+  const pages = ["Products", "Prices", "Blog"];
   const settings = ["Profile", "Account", "Dashboard", "Logout"];
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
@@ -86,7 +85,7 @@ function Header() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          {/*<img src={Logo} alt="Mancuerna" style={{ width: '24px', height: '24px', display: { xs: "none", md: "flex" }, marginRight: '8px' }} /> agrega el logo de la mancuerna en el centro del header*/}
           <Typography
             variant="h5"
             noWrap
@@ -99,7 +98,7 @@ function Header() {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: "#AB8F16",
               textDecoration: "none",
             }}
           >
