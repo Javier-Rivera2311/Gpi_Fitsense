@@ -7,27 +7,19 @@ const UpdateUserForm = () => {
   const [altura, setAltura] = useState('');
   const [peso, setPeso] = useState('');
   const [exercise_level, setExerciseLevel] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-  
-    const tokenUser = localStorage.getItem('authToken');
-
-    if (!tokenUser) {
-        alert('No se encontró el token');
-        return;
-      }
-
-    // Accede al email del usuario
-    const userEmail = tokenUser.email;
 
     const response = await fetch('http://localhost:4000/user/updateUser', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
-        'authorization': tokenUser // reemplaza con el token del usuario
       },
-      body: JSON.stringify({ userEmail, edad, altura, peso, exercise_level })
+      body: JSON.stringify({ edad, altura, peso, exercise_level,email, password })
     });
 
     const data = await response.json();
@@ -40,26 +32,30 @@ const UpdateUserForm = () => {
   };
 
   return (
-    <Paper style={{ padding: '30px',  borderRadius: '20px' , display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-      <Typography variant="h5" style={{ marginTop: '20px' }}>
-        Actualizar Información
-      </Typography>
-      <form onSubmit={handleSubmit}>
-        <TextField label="Edad" value={edad} onChange={(e) => setEdad(e.target.value)} style={{ marginTop: '10px' }} />
-        <TextField label="Altura" value={altura} onChange={(e) => setAltura(e.target.value)} style={{ marginTop: '10px' }} />
-        <TextField label="Peso" value={peso} onChange={(e) => setPeso(e.target.value)} style={{ marginTop: '10px' }} />
-        <FormControl style={{ marginTop: '10px' }}>
-        <InputLabel>Nivel de Ejercicio</InputLabel>
-        <Select value={exercise_level} onChange={(e) => setExerciseLevel(e.target.value)}>
-            <MenuItem value={'Poco o ningún ejercicio'}>Poco o ningún ejercicio</MenuItem>
-            <MenuItem value={'Ejercicio ligero (1 - 3 días por semana)'}>Ejercicio ligero (1 - 3 días por semana)</MenuItem>
-            <MenuItem value={'Ejercicio moderado (3 - 5 días por semana)'}>Ejercicio moderado (3 - 5 días por semana)</MenuItem>
-            <MenuItem value={'Ejercicio fuerte (6 - 7 días por semana)'}>Ejercicio fuerte (6 - 7 días por semana)</MenuItem>
-        </Select>
-        </FormControl>
-        <Button type="submit" variant="contained" color="primary" style={{ marginTop: '20px' }}>Actualizar</Button>
-      </form>
-    </Paper>
+<Paper style={{ padding: '30px',  borderRadius: '20px' , display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+  <Typography variant="h5" style={{ marginTop: '20px' }}>
+    Actualizar Información
+  </Typography>
+  <form onSubmit={handleSubmit}>
+    <TextField label="Edad" value={edad} onChange={(e) => setEdad(e.target.value)} style={{ marginTop: '10px', padding:'10px' }} />
+    <TextField label="Altura" value={altura} onChange={(e) => setAltura(e.target.value)} style={{ marginTop: '10px', padding:'10px' }} />
+    <TextField label="Peso" value={peso} onChange={(e) => setPeso(e.target.value)} style={{ marginTop: '10px', padding:'10px' }} />
+    <TextField label="Correo Electrónico" value={email} onChange={(e) => setEmail(e.target.value)} style={{ marginTop: '10px', padding:'10px' }} />
+    <TextField label="Contraseña" type="password" value={password} onChange={(e) => setPassword(e.target.value)} style={{ marginTop: '10px', padding:'10px' }} />
+    <FormControl style={{ marginTop: '10px', padding:'10px',display: 'flex', flexDirection: 'column' }}>
+      <InputLabel>Nivel de Ejercicio</InputLabel>
+      <Select value={exercise_level} onChange={(e) => setExerciseLevel(e.target.value)}>
+        <MenuItem value={'Poco o ningún ejercicio'}>Poco o ningún ejercicio</MenuItem>
+        <MenuItem value={'Ejercicio ligero (1 - 3 días por semana)'}>Ejercicio ligero (1 - 3 días por semana)</MenuItem>
+        <MenuItem value={'Ejercicio moderado (3 - 5 días por semana)'}>Ejercicio moderado (3 - 5 días por semana)</MenuItem>
+        <MenuItem value={'Ejercicio fuerte (6 - 7 días por semana)'}>Ejercicio fuerte (6 - 7 días por semana)</MenuItem>
+      </Select>
+    </FormControl>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <Button type="submit" variant="contained" color="primary" style={{ marginTop: '20px', backgroundColor: '#AB8F16'  }}>Actualizar</Button>
+    </div>
+  </form>
+</Paper>
   );
 };
 
