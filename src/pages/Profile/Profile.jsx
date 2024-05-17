@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import fondo1 from "../../assets/fitness-1882721_1280.jpg";
 import UpdateUserForm from './UpdateUserForm';
 
+
 const Profile = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -48,7 +49,7 @@ const Profile = () => {
         <Typography variant="body1" style={{ marginTop: '10px' }}>
           {email}
         </Typography>
-        <Button variant="contained" color="primary" component={Link} to="/auth/newpassword" style={{ marginTop: '20px' }}>
+        <Button variant="contained" color="primary" component={Link} to="/auth/newpassword" style={{ marginTop: '20px' , backgroundColor: '#AB8F16' }}>
           Cambiar contraseña
         </Button>
       </Paper>

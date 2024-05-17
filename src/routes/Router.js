@@ -26,6 +26,9 @@ const Login = Loadable(lazy(() => import("../pages/Log/Login")));
 const Register = Loadable(lazy(() => import("../pages/Log/Register")));
 <Register path="/Register" component={Register} />
 
+const NewPassword = Loadable(lazy(() => import("../pages/Log/NewPassword")));
+<NewPassword path="/NewPassword" component={NewPassword} />
+
 const Profile = Loadable(lazy(() => import("../pages/Profile/Profile")));
 <Profile path="/Profile" component={Profile} />
 
@@ -68,6 +71,7 @@ const Router = [
       { path: "404", element: <Error /> },
       {path: "Login",exact: true, element: <Login/>},
       {path: "Register",exact: true, element: <Register/>},
+      {path: "NewPassword",exact: true, element: <NewPassword/>},
 
     ],
   },
