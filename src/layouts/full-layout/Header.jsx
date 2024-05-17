@@ -1,12 +1,13 @@
 import { AppBar, Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography } from "@mui/material";
 import React, { useState } from "react";
+import { Link, useNavigate } from 'react-router-dom';
 import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "../../assets/mancuerna.png";
 import Bar from "../../assets/bar.png";
 
 
 function Header() {
-  const pages = ["Products", "Prices", "Blog"];
+  const pages = ["About us", "Prices", "Blog", "Contact"];
   const settings = ["Profile", "Account", "Dashboard", "Logout"];
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
@@ -26,6 +27,12 @@ function Header() {
     setAnchorElUser(null);
   };
 
+  const navigate = useNavigate();
+
+  const cerrarSesion = () => {
+    localStorage.removeItem('authToken');
+    navigate('/');
+  };
   return (
     <AppBar position="static" sx={{ backgroundColor: "black" }}>
       <Container maxWidth="xl" sx={{ backgroundColor: "black" }}>
@@ -104,15 +111,18 @@ function Header() {
           >
             Fitsense
           </Typography>
+{/*aqui es donde hacermos que la barra del header de abaut us, contact, blog ... pueda ir a la ruta al hacer click*/}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "#AB8F16", display: "block" }}
-              >
-                {page}
-              </Button>
+              key={page}
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "#AB8F16", display: "block" }}
+              component={Link}
+              to={`/${page.replace(' ', '').toLowerCase()}`}
+            >
+              {page}
+            </Button>
             ))}
           </Box>
 
@@ -141,11 +151,19 @@ function Header() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+            {/*logica para el manejo del menu esquina superior derecha para cerrar sesion (borrar token) y usar la navegacion*/}
+
+            {settings.map((setting) => (
+              setting === "Logout" ? (
+                <MenuItem onClick={cerrarSesion}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
-              ))}
+              ) : (
+                <MenuItem key={setting} onClick={handleCloseUserMenu} component={Link} to={`/${setting.toLowerCase()}`}>
+                  <Typography textAlign="center">{setting}</Typography>
+                </MenuItem>
+              )
+            ))}
             </Menu>
           </Box>
         </Toolbar>
