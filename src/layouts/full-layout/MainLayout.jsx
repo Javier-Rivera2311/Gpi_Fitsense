@@ -1,8 +1,9 @@
-import { Backdrop, CircularProgress } from "@mui/material";
+import { Backdrop, CircularProgress, Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+
 function MainLayout() {
   const [loading, isLoading] = useState(true);
   useEffect(() => {
@@ -15,13 +16,15 @@ function MainLayout() {
     <>
       {!loading ? (
         <>
-        <Header />
-          <Outlet />
+          <Header />
+          <Box mt={1} mb={1}> {/* Margen superior e inferior */}
+            <Outlet />
+          </Box>
           <Footer />
         </>
       ) : (
         <Backdrop
-          sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+          sx={{ color: "#FFFF00", zIndex: (theme) => theme.zIndex.drawer + 1 }}
           open={true}
         >
           <CircularProgress color="inherit" />
