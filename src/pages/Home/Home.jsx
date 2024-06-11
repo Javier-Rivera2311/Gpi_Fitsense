@@ -1,83 +1,89 @@
 import React from "react";
 import PageContainer from "../../components/container/PageContainer";
-import { Box, Typography } from "@mui/material";
-import img from "../../assets/fitness-1882721_1280.jpg";
+import { Box, Typography, Button, Grid } from "@mui/material";
+import img from "../../assets/3802449.png";
+
 function Home() {
   return (
-    <PageContainer title="Pagina inicio" description="colocar algo">
+    <PageContainer title="Página inicio" description="colocar algo">
       <Box
         sx={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           width: "100%",
-          flexDirection: "column",
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${img})`,
-          backgroundSize: "100% 90%",
-          backgroundRepeat: "no-repeat",
-          backgroundPositionY: "18%",
-          backgroundPosition: "top",
+          minHeight: "calc(80vh - 64px)", // Ajusta la altura para tener en cuenta el header y footer
+          backgroundColor: "black",
+          color: "white",
+          padding: 2,
         }}
-        minHeight={600}
       >
-        <Box
-          display="flex"
-          flexDirection="column"
-          gap={2}
-          justifyContent={"center"}
-          alignItems="center"
-        >
-          <Typography
-            variant="h1"
-            component="h1"
-            sx={{
-              color: "white",
-              textShadow: "2px 2px 4px #000000",
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-            }}
-          >
-            FITSENSE
-          </Typography>
-          <Typography
-            variant="h4"
-            component="h2"
-            sx={{
-              color: "white",
-              textShadow: "2px 2px 4px #000000",
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              textAlign: "center",
-
-            }}
-          >
-¡Únete a FitSense y transforma tu vida!</Typography>
-
-        </Box>
-      </Box>
-      <Box
-        padding={10}
-        display="flex"
-        flexDirection="column"
-        gap={5}
-        alignItems="center"
-      >
-        <Typography
-          variant="h4"
-          component="h2"
-          sx={{
-            fontFamily: "monospace",
-            fontWeight: 700,
-            letterSpacing: ".3rem",
-            color: "white",
-            textShadow: "2px 2px 4px #000000",
-          }}
-        >
-          Descubre cómo entrenar con inteligencia puede llevarte a ser más fuerte, más saludable y más feliz. Tu camino hacia una mejor versión de ti comienza ahora.
-        </Typography>
-
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={6}>
+            <Box padding={7}>
+              <Typography
+                variant="h2"
+                component="h1"
+                sx={{
+                  color: "gold",
+                  textShadow: "2px 2px 4px #000000",
+                  fontFamily: "monospace",
+                  fontWeight: 700,
+                  letterSpacing: ".3rem",
+                  marginBottom: 5,
+                }}
+              >
+                Planifica tu entrenamiento con FitSense
+              </Typography>
+              <Typography
+                variant="h6"
+                component="h2"
+                sx={{
+                  fontFamily: "monospace",
+                  fontWeight: 700,
+                  letterSpacing: ".3rem",
+                  color: "lemonchiffon",
+                  textShadow: "2px 2px 4px #000000",
+                  marginBottom: 2,
+                }}
+              >
+                Planifica y mide la activación muscular en tus entrenamientos con los sensores EMG usando FitSense y mejora tu rendimiento.
+              </Typography>
+              <Button
+                variant="contained"
+                sx={{
+                  backgroundColor: "orange",
+                  color: "black",
+                  fontWeight: "bold",
+                  padding: "10px 20px",
+                  fontSize: "1.2rem",
+                  marginTop: 2,
+                  display: 'grid',
+                  justify: 'center',
+                  marginLeft: 20,
+                  "&:hover": {
+                    backgroundColor: "darkorange",
+                  },
+                }}
+              >
+                MIS ENTRENAMIENTOS
+              </Button>
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={5}>
+            <Box
+              sx={{
+                width: 500,
+                height: 500,
+                backgroundImage: `url(${img})`,
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                margin: "0 auto", // Center the image horizontally
+              }}
+            />
+          </Grid>
+        </Grid>
       </Box>
     </PageContainer>
   );
