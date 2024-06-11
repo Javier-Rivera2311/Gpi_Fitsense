@@ -1,10 +1,23 @@
 import React from 'react';
+import { Box, Typography, colors } from "@mui/material";
+import Galeria from './CartaGaleria';
 
 const Workout = () => {
   return (
-    <div>
-      <h1>Workout</h1>
-    </div>
+    <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          height: "100%",
+          flexDirection: "column",
+        }}
+        minHeight={600}S
+      >
+        <Galeria/>
+        </Box>    
+      
   );
 };
 

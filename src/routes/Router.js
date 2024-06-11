@@ -12,6 +12,10 @@ const LoginLayout = Loadable(
   lazy(() => import("../layouts/login-layout/LoginLayout"))
 );
 
+const MainLayoutSF = Loadable(
+  lazy(() => import("../layouts/full-layout/MainLayoutSF"))
+);
+
 
 /* ***End Layouts**** */
 
@@ -44,6 +48,9 @@ const Blog = Loadable(lazy(() => import("../pages/Blog/Blog")));
 const Workout = Loadable(lazy(() => import("../pages/Workout/Workout")));
 <Workout path="/Workout" component={Workout} />
 
+const Tecnica = Loadable(lazy(() => import("../pages/Workout/Tecnica")));
+<Tecnica path="/Tecnica" component={Tecnica} />
+
 /* ****Routes***** */
 
 const Router = [
@@ -58,8 +65,15 @@ const Router = [
       {path: "Prices",exact: true, element: <Prices/>},
       {path: "Contact",exact: true, element: <Contact/>},
       {path: "Blog",exact: true, element: <ProtectedRoute><Blog/></ProtectedRoute>},
-      {path: "Workout",exact: true, element: <ProtectedRoute><Workout/></ProtectedRoute>},
 
+    ],
+  },
+  {
+    path: "/",
+    element: <MainLayoutSF />,
+    children: [
+      {path: "Workout",exact: true, element: <ProtectedRoute><Workout/></ProtectedRoute>},
+      {path: "Tecnica",exact: true, element: <ProtectedRoute><Tecnica/></ProtectedRoute>},
     ],
   },
   {

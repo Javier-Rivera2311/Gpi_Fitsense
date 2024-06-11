@@ -6,7 +6,7 @@ import img from "../../assets/3802449.png";
 
 function Home() {
   return (
-    <PageContainer title="Página inicio" description="colocar algo">
+    <PageContainer title="Fitsense" description="colocar algo">
       <Box
         sx={{
           display: "flex",
