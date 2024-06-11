@@ -7,7 +7,7 @@ import Bar from "../../assets/bar.png";
 
 
 function Header() {
-  const pages = ["About us", "Prices", "Blog", "Contact"];
+  const pages = ["About us", "Prices", "Blog", "Contact", "Workout"];
   const settings = ["Profile", "Account", "Dashboard", "Logout"];
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
