@@ -15,12 +15,11 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function Consejos() {
   return (
-    <Box>
-    <Box sx={{ width: '99%' }}>
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+    <Box sx={{ width: '99%', display: 'flex', justifyContent: 'center', mt:4 }}>
+      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{ maxWidth: '80%' }}>
         <Grid item xs={12} md={4}>
           <Item>
-            <Typography sx={{color: 'orange'}} variant="h6">Calentar Antes de Entrenar:</Typography>
+            <Typography sx={{color: 'orange'}} variant="h6">Recuerda calentar antes de entrenar:</Typography>
             <Typography sx={{color: 'lemonchiffon'}} variant="body1">Calentar prepara tus músculos y articulaciones para el esfuerzo físico, ayudando a prevenir lesiones y mejorando tu rendimiento.</Typography>
             <Typography sx={{color: 'lemonchiffon'}} variant="body1">Dedica entre 10 y 15 minutos a ejercicios de calentamiento dinámico, como estiramientos ligeros, trote suave, saltos o movimientos específicos del deporte que vayas a practicar.</Typography>
           </Item>
@@ -40,7 +39,6 @@ function Consejos() {
           </Item>
         </Grid>
       </Grid>
-    </Box>
     </Box>
   );
 }
