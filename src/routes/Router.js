@@ -51,6 +51,9 @@ const Workout = Loadable(lazy(() => import("../pages/Workout/Workout")));
 const Tecnica = Loadable(lazy(() => import("../pages/Workout/Tecnica")));
 <Tecnica path="/Tecnica" component={Tecnica} />
 
+const AboutUs = Loadable(lazy(() => import("../pages/AboutUs/AboutUs")));
+<AboutUs path="/AboutUs" component={AboutUs} />
+
 /* ****Routes***** */
 
 const Router = [
@@ -65,6 +68,8 @@ const Router = [
       {path: "Prices",exact: true, element: <Prices/>},
       {path: "Contact",exact: true, element: <Contact/>},
       {path: "Blog",exact: true, element: <ProtectedRoute><Blog/></ProtectedRoute>},
+      {path: "AboutUs",exact: true, element: <AboutUs/>},
+
 
     ],
   },
