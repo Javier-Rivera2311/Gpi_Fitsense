@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PageContainer from "../../components/container/PageContainer";
 import { Box, Typography, Button, Grid } from "@mui/material";
 import img from "../../assets/3802449.png";
+import Consejos from "./Consejos";
 
 function Home() {
   return (
@@ -88,6 +89,7 @@ function Home() {
           </Grid>
         </Grid>
       </Box>
+      <Consejos />
     </PageContainer>
   );
 }
