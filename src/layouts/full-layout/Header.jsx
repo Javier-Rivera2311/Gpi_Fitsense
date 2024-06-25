@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "../../assets/mancuerna.png";
 import Bar from "../../assets/bar.png";
+import NotificationsIcon from "@mui/icons-material/Notifications";
 
 
 function Header() {
@@ -11,6 +12,7 @@ function Header() {
   const settings = ["Profile", "Account", "Dashboard", "Logout"];
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
+  const [anchorElNotification, setAnchorElNotification] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -33,6 +35,16 @@ function Header() {
     localStorage.removeItem('authToken');
     navigate('/');
   };
+
+  const handleOpenNotificationMenu = (event) => {
+    setAnchorElNotification(event.currentTarget);
+  };
+
+  // Maneja el cierre del menú de notificaciones
+  const handleCloseNotificationMenu = () => {
+    setAnchorElNotification(null);
+  };
+
   return (
     <AppBar position="static" sx={{ backgroundColor: "black" }}>
       <Container maxWidth="xl" sx={{ backgroundColor: "black" }}>
@@ -125,7 +137,33 @@ function Header() {
             </Button>
             ))}
           </Box>
-
+          {/*Comienzo del boton de notificacion*/}
+          <IconButton
+            size="large"
+            aria-label="show notifications"
+            onClick={handleOpenNotificationMenu} // Función para manejar el clic en el botón de notificaciones
+            color="inherit" // Color del ícono para que coincida con el tema
+            >
+            <NotificationsIcon sx={{color: "#AB8F16"}}/> 
+          </IconButton>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorElNotification}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            open={Boolean(anchorElNotification)}
+            onClose={handleCloseNotificationMenu}>
+            <MenuItem onClick={handleCloseNotificationMenu}>Notificación 1</MenuItem>
+            <MenuItem onClick={handleCloseNotificationMenu}>Notificación 2</MenuItem>
+          </Menu>
+          {/*Fin del boton de notificacion*/}
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
