@@ -43,6 +43,35 @@ function Galeria() {
       <Card sx={{ ...cardStyle, ...mediaQueryStyle.cardStyle }}>
         <CardContent>
           <Typography variant="h5" sx={{ fontWeight: "bold" }}>
+            Entrenamientos
+          </Typography>
+          <Typography variant="body1">
+            Aquí encontraras una variedad de entrenamientos para que puedas realizar. Desde la parte superior del cuerpo hasta la parte inferior.
+          </Typography>
+          <Button
+                variant="contained"
+                sx={{
+                  backgroundColor: "orange",
+                  color: "black",
+                  fontWeight: "bold",
+                  padding: "10px 20px",
+                  fontSize: "1.2rem",
+                  marginTop: 2,
+                  display: 'grid',
+                  justify: 'center',
+                  marginLeft: 15,
+                  "&:hover": {
+                    backgroundColor: "darkorange",
+                  },
+                }}
+              >
+                <Link to="/Entrenamientos" style={{ textDecoration: 'none', color: 'inherit' }}>Acceder</Link>
+            </Button>
+        </CardContent>
+      </Card>
+      <Card sx={{ ...cardStyle, ...mediaQueryStyle.cardStyle }}>
+        <CardContent>
+          <Typography variant="h5" sx={{ fontWeight: "bold" }}>
             Técnica de los Ejercicios
           </Typography>
           <Typography variant="body1">
@@ -70,35 +99,7 @@ function Galeria() {
             </Button>
         </CardContent>
       </Card>
-      <Card sx={{ ...cardStyle, ...mediaQueryStyle.cardStyle }}>
-        <CardContent>
-          <Typography variant="h5" sx={{ fontWeight: "bold" }}>
-            Proximamente...
-          </Typography>
-          <Typography variant="body1">
-            Estamos trabajando para usted
-          </Typography>
-          <Button
-                variant="contained"
-                sx={{
-                  backgroundColor: "orange",
-                  color: "black",
-                  fontWeight: "bold",
-                  padding: "10px 20px",
-                  fontSize: "1.2rem",
-                  marginTop: 2,
-                  display: 'grid',
-                  justify: 'center',
-                  marginLeft: 15,
-                  "&:hover": {
-                    backgroundColor: "darkorange",
-                  },
-                }}
-              >
-                Acceder
-            </Button>
-        </CardContent>
-      </Card>
+      
       <Card sx={{ ...cardStyle, ...mediaQueryStyle.cardStyle }}>
         <CardContent>
           <Typography variant="h5" sx={{ fontWeight: "bold" }}>
