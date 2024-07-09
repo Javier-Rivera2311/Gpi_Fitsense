@@ -125,7 +125,7 @@ function Galeria() {
                   },
                 }}
               >
-                Acceder
+                <Link to="/CreateRoutine" style={{ textDecoration: 'none', color: 'inherit' }}>Acceder</Link>
             </Button>
         </CardContent>
       </Card>
