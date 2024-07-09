@@ -103,10 +103,10 @@ function Galeria() {
       <Card sx={{ ...cardStyle, ...mediaQueryStyle.cardStyle }}>
         <CardContent>
           <Typography variant="h5" sx={{ fontWeight: "bold" }}>
-            Proximamente...
+            Crear Rutina
           </Typography>
           <Typography variant="body1">
-            Estamos trabajando para usted
+            Aquí podrás crear tu propia rutina de entrenamiento.
           </Typography>
           <Button
                 variant="contained"
