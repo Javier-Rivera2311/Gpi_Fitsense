@@ -150,18 +150,18 @@ function Header() {
             id="menu-appbar"
             anchorEl={anchorElNotification}
             anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
+              vertical: 'bottom',
+              horizontal: 'center',
             }}
             keepMounted
             transformOrigin={{
               vertical: 'top',
-              horizontal: 'right',
+              horizontal: 'center',
             }}
             open={Boolean(anchorElNotification)}
             onClose={handleCloseNotificationMenu}>
-            <MenuItem onClick={handleCloseNotificationMenu}>Notificación 1</MenuItem>
-            <MenuItem onClick={handleCloseNotificationMenu}>Notificación 2</MenuItem>
+            <MenuItem onClick={handleCloseNotificationMenu}>Ejemplo Notificación</MenuItem>
+            <MenuItem onClick={handleCloseNotificationMenu}>Ejemplo Notificación</MenuItem>
           </Menu>
           {/*Fin del boton de notificacion*/}
           <Box sx={{ flexGrow: 0 }}>
